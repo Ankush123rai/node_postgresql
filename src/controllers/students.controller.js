@@ -13,7 +13,6 @@ exports.createStudent = async (req, res) => {
   }
 };
 
-
 exports.getStudents = async (req, res) => {
   try {
     const students = await prisma.student.findMany();
