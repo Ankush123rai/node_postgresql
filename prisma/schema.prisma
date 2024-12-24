@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Ensure this is set in your .env file
+}
+
+model Student {
+  id          String   @id @default(uuid())
+  studentName String   @map("student_name")
+  cohort      String
+  courses     String[] 
+  joinDate    DateTime @map("join_date")
+  lastLogin   DateTime @map("last_login")
+  status      String
+}
